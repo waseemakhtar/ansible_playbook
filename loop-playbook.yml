@@ -1,0 +1,14 @@
+---
+# Execute this playbook using following command, which reads specific k,v pairs:
+# ansible-playbook loop-playbook.yml --extra-vars "@input-files/pipx_install.yml"
+- hosts: localhost
+
+  tasks:
+    - name: delete file
+      file:
+          path: /tmp/output
+          state: absent
+
+    - name: "echo the information to /tmp/output"
+      loop: "{{pipx_install|dict2items}}"
+      shell: "echo {{item.key}}:{{item.value}} >> /tmp/output"
