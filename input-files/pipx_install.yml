@@ -1,0 +1,34 @@
+---
+# Toolkit Lineup File
+# This is a input file for loop-playbook.yml file
+version: 21.02.0-1
+registry: artifactory.world.com
+
+base_vm:
+  version: "210305"
+
+dtkdist:
+  version: "21.02.0-91"
+
+images:
+  ra_base:
+    image: "artifactory.world.com/mars/base-image-devops-toolkit"
+    version: "20210220-py3.8"
+  microservice_base:
+    image: "artifactory.world.com/mars/focal-python-jre"
+    version: "20201124"
+  core_dev:
+    image: "artifactory.world.com/mars/bpocore-dev"
+    version: "3.6.0-11662-435e090"
+  frost_orchestrate_ui_dev:
+    image: "artifactory.world.com/mars/frost-orchestrate-ui-dev"
+    version: "2102.0.5"
+  script_dev:
+    image: "artifactory.world.com/mars/script-dev"
+    version: "2.1.56"
+pipx_install:
+  core: core_cli-0.0.55-py2.py3-none-any.whl
+  paster: sdk-paste-py3-none-any.whl
+  yanggenra: yanggenra-0.0.35-py3-none-any.whl
+  yangpreparecli: yang-0.0.55-py3-none-any.whl
+  maker: maker-2.0.4-py3-none-any.whl
