@@ -1,0 +1,8 @@
+---
+# Execute this playbook using following command:
+# ansible-playbook echo-playbook.yml --extra-vars "version=1.23.45 other_variable=foo"
+- hosts: localhost
+
+  tasks:
+    - name: "echo the information to /tmp/output"
+      shell: "echo {{other_variable}}:{{version}} > /tmp/output"

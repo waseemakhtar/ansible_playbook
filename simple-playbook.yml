@@ -1,0 +1,12 @@
+---
+# Execute this playbook using following command:
+# ansible-playbook <filename>
+
+- hosts: localhost
+
+  tasks:
+    - name: "ping localhost"
+      ping:
+
+    - name: "execute a shell command"
+      shell: "date; whoami; df -h;"
