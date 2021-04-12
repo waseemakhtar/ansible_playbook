@@ -12,3 +12,4 @@
     - name: "echo the information to /tmp/output"
       loop: "{{pipx_install|dict2items}}"
       shell: "echo {{item.key}}:{{item.value}} >> /tmp/output"
+      when: pipx_install is defined
